@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Условия</title>
+</head>
+<body>
+    <a href="index.html">Home |</a>
+    <a href="second_index.html">Page_2</a><br>
+    <hr>
+
+    <div class="" id="app1">
+        <span>Проверяем условие </span><br><br>
+        <!-- <span>Введите сначала любое слов а затем Hello </span><br><br> -->
+        <input type="text"  v-on:input="startText($event.target.value)"><br>
+        <div v-if="title_2 == 'Hello'">{{ title }}</div>
+        <div v-else><b>{{ title_4 }}</b></div><br><br>
+
+        <span v-if="title_2 == 'Hello'">{{ title_3 }}</span><br><br>
+        <span v-if="title_2 == 'Hello'"><b>{{ title_32 }}</b></span><br><br>
+        <hr>
+        <br>
+        <button v-on:click="isVisible = !isVisible">Show or Hide some text</button><br><br>
+        <span>S</span><span v-if="isVisible">how some text!</span><span v-if="!isVisible">_____________текст <b>УДАЛЯЕТСЯ</b> из html(v-if=)</span><br>
+        <span>T</span><span v-show="isVisible">he text is shown!</span><span v-if="!isVisible">______________текст <b>СКРЫВАЕТСЯ</b> в html(v-show=)</span>
+        <br>
+        <hr>
+        <br>
+        <div class="">Работаем с массивом</div>
+        <span>Тут выводим конкретный элемент массива по его ключу <b>cars[1].name=></b> </span><span>{{ cars[1].name }}</span><br>
+
+        <div class="">Перебираем в цикле</div>
+        <ul>
+            <li v-for="el in cars">speed - {{ el.speed }}км_ч - <b>{{ el.name }}</b> has color {{ el.color }} </li>
+        </ul>
+
+        <div class="">Так же получаем индекс объекта</div>
+        <ul>
+            <li v-for="(el, i) in cars">{{ i }} - <b>{{ el.name }}</b> - {{ i + 1 }}</li>
+        </ul>
+        <br>
+        <hr>
+        <br>
+        <div class="">Работа с фильтрами </div>
+        <div class="">цвет- все заглавные буквы  через JS функцию toUpperCase();  {\{\ el.color | upperCase}\}\</div>
+        <ul>
+            <li v-for="el in cars">speed - {{ el.speed }}км_ч - <b>{{ el.name }}</b> has color <b>{{ el.color | upperCase}}</b></li>
+        </ul>
+        <br>
+        <hr>
+        <br>
+
+        <div class="">Работаем с Компонентом</div>
+        <div class="">Один раз создали компонент и затем можем его выводить несколько раз прописывая только так </div>
+        <div class=""><\main-component>\<\/\main-component>\</div>
+        <main-component></main-component>
+        <div class="">=== === ===</div>
+        <main-component></main-component>
+    </div><hr>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="secondJs/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE_JS</title>
+</head>
+<body>
+    <a href="index.html">Home |</a>
+    <a href="second_index.html">Page_2</a><br><hr>
+
+    <div class="" id="app">
+        <span>{{title}}</span><br>
+        <span>{{isTrue}}</span><br>
+        <button @click="title= 'New text'">Нажать1</button>
+        <button v-on:click="title= 'Andrey Hello'">Нажать2</button>
+        <button v-on:click="ChengText">менять число</button>
+    </div><hr>
+
+    <div class="" id="second">
+        <span>Введите число</span><br>
+        <input type="text" v-on:input="increment($event.target.value)"><br>
+        <span>{{ first }}</span><br>
+        <span>{{ second }}</span><br>
+    </div><hr>
+
+    <div class="" id="third">
+        <span v-bind:style="style">{{ first_2 }}</span><br>
+        <input type="text" v-on:input="style = $event.target.value" ><br>
+
+        <span v-bind:style="style">{{ second_2 }}</span><br>
+    </div><hr>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/second.js"></script>
+    <script src="js/third.js"></script>
+</body>
+</html>
